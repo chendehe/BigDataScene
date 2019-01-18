@@ -31,7 +31,6 @@
       <kafka.version>1.0.0</kafka.version>
   </properties>
 
-  <dependencyManagement>
     <dependencies>
       <!-- mybatis-spring -->
       <dependency>
@@ -111,27 +110,24 @@
         <version>${kafka.version}</version>
       </dependency>
     </dependencies>
-  </dependencyManagement>
 
   <build>
-      <pluginManagement>
-          <plugins>
-              <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-compiler-plugin</artifactId>
-                  <configuration>
-                      <!-- see configurations in settings.xml-->
-                  </configuration>
-              </plugin>
-              <plugin>
-                  <!-- 打包成可执行的jar -->
-                  <groupId>org.springframework.boot</groupId>
-                  <artifactId>spring-boot-maven-plugin</artifactId>
-                  <configuration>
-                      <fork>true</fork>
-                  </configuration>
-              </plugin>
-          </plugins>
-      </pluginManagement>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <!-- see configurations in settings.xml-->
+              </configuration>
+          </plugin>
+          <plugin>
+              <!-- 打包成可执行的jar -->
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+              <configuration>
+                  <fork>true</fork>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>
