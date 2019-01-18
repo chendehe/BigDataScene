@@ -1,6 +1,6 @@
 package com.chendehe.bigdata.zk;
 
-import com.chendehe.zk.lock.SimpleDistributedLockMutex;
+import com.chendehe.bigdata.zk.lock.SimpleDistributedLockMutex;
 import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.serialize.BytesPushThroughSerializer;
 

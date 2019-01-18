@@ -1,6 +1,7 @@
 package com.chendehe.bigdata.kafka;
 
 import java.util.Properties;
+import java.util.Scanner;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -30,16 +31,22 @@ class MyProducer {
     //props.put("partitioner.class", "com.chendehe.kafka.MyPartitioner");
     Producer<String, String> producer = new KafkaProducer<>(props);
 
-    ////////
-    ProducerRecord<String, String> data = new ProducerRecord<>(TOPIC, "K2", "V2");
-    producer.send(data, (metadata, e) -> {
-      if (e != null) {
-        e.printStackTrace();
-      } else {
-        System.out.println("The offset of the record we just sent is: " + metadata.offset());
-      }
-    });
-    ///////
+    String value = "";
+    Scanner sc = new Scanner(System.in);
+    for (; !"end".equals(value); ) {
+      value = sc.nextLine();
+      ////////
+      ProducerRecord<String, String> data = new ProducerRecord<>(TOPIC, "key", value);
+      producer.send(data, (metadata, e) -> {
+        if (e != null) {
+          e.printStackTrace();
+        } else {
+          System.out.println("The offset of the record we just sent is: " + metadata.offset());
+        }
+      });
+      ///////
+    }
     producer.close();
+    sc.close();
   }
 }  

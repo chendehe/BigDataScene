@@ -8,9 +8,10 @@
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>1.5.8.RELEASE</version>
   </parent>
+
   <groupId>com.chendehe.bigdata</groupId>
-  <artifactId>scene</artifactId>
-  <version>1.0.0</version>
+      <artifactId>scene</artifactId>
+      <version>1.0.0</version>
   <packaging>pom</packaging>
 
     <modules>
@@ -28,7 +29,7 @@
       <elasticsearch.version>6.1.1</elasticsearch.version>
       <zookeeper.version>3.4.11</zookeeper.version>
       <zkclient.version>0.9</zkclient.version>
-      <kafka.version>1.0.0</kafka.version>
+      <kafka.version>0.8.2.1</kafka.version>
   </properties>
 
     <dependencies>
@@ -81,16 +82,16 @@
         <version>${jedis.version}</version>
       </dependency>
       <!-- elasticsearch -->
-      <dependency>
-        <groupId>org.elasticsearch</groupId>
-        <artifactId>elasticsearch</artifactId>
-        <version>${elasticsearch.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.elasticsearch.client</groupId>
-        <artifactId>transport</artifactId>
-        <version>${elasticsearch.version}</version>
-      </dependency>
+      <!--<dependency>-->
+        <!--<groupId>org.elasticsearch</groupId>-->
+        <!--<artifactId>elasticsearch</artifactId>-->
+        <!--<version>${elasticsearch.version}</version>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.elasticsearch.client</groupId>-->
+        <!--<artifactId>transport</artifactId>-->
+        <!--<version>${elasticsearch.version}</version>-->
+      <!--</dependency>-->
       <!-- zookeeper -->
       <dependency>
         <groupId>org.apache.zookeeper</groupId>
@@ -103,12 +104,56 @@
         <artifactId>zkclient</artifactId>
         <version>${zkclient.version}</version>
       </dependency>
-      <!-- kafka_2.12 -->
+      <!-- kafka_2.11 -->
       <dependency>
         <groupId>org.apache.kafka</groupId>
-        <artifactId>kafka_2.12</artifactId>
+        <artifactId>kafka_2.11</artifactId>
         <version>${kafka.version}</version>
       </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka_2.11</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.11.12</version>
+        </dependency><!-- https://mvnrepository.com/artifact/org.scala-lang/scala-reflect -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>2.11.12</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-reflect -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>2.11.12</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-compiler -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>2.11.12</version>
+        </dependency>
+
+
+
     </dependencies>
 
   <build>
